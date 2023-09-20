@@ -16,6 +16,8 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
+gem "slim-rails"
+
 group :development, :test do
 
 end
