@@ -1,0 +1,23 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+Style/Documentation:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Layout/TrailingEmptyLines:
+#   Enabled: false
+# Style/ClassAndModuleChildren:
+#   Enabled: false
+# Layout/LineLength:
+#   Max: 250
+# Metrics/ClassLength:
+#   Enabled: false
+# Metrics/MethodLength:
+#   Enabled: false

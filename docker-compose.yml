@@ -5,6 +5,7 @@ services:
     volumes:
       - ".:/simple_chat"
       - assets:/simple_chat/public/assets
+      - gems:/usr/local/bundle
     ports:
       - "3000:3000"
     depends_on:
@@ -27,3 +28,4 @@ services:
 volumes:
   pg_data: {}
   assets:
+  gems:
