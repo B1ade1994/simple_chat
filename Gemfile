@@ -16,12 +16,14 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
+gem 'pagy', '~> 6.0'
 gem 'slim-rails'
 
 group :development, :test do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-slim', require: false
 
   gem 'rspec-rails', '~> 6.0.0'
 end
