@@ -4,10 +4,6 @@ import { Controller } from '@hotwired/stimulus';
 export default class extends Controller {
   static targets = ['modal'];
 
-  connect() {
-
-  }
-
   open() {
     this.modalTarget.classList.remove('hidden');
     this.modalTarget.setAttribute('aria-modal', 'true');
@@ -15,7 +11,12 @@ export default class extends Controller {
     this.modalTarget.removeAttribute('aria-hidden');
 
     this.createBackdrop();
-    this.setupModalCloseEventListeners();
+  }
+
+  closeModal(event) {
+    if (event.key === 'Escape' || event.target === this.modalTarget) {
+      this.close();
+    }
   }
 
   close() {
@@ -25,7 +26,6 @@ export default class extends Controller {
     this.modalTarget.removeAttribute('role');
 
     this.destroyBackdrop();
-    this.removeModalCloseEventListeners();
   }
 
   createBackdrop() {
@@ -37,27 +37,5 @@ export default class extends Controller {
 
   destroyBackdrop() {
     document.querySelector('[modal-backdrop]').remove();
-  }
-
-  setupModalCloseEventListeners() {
-    this.modalTarget.addEventListener('click', this.clickOutsideHandler.bind(this));
-    this.modalTarget.addEventListener('keydown', this.keydownHandler.bind(this));
-  }
-
-  removeModalCloseEventListeners() {
-    this.modalTarget.removeEventListener('click', this.clickOutsideHandler.bind(this));
-    this.modalTarget.removeEventListener('keydown', this.keydownHandler.bind(this));
-  }
-
-  clickOutsideHandler(event) {
-    if (event.target === this.modalTarget) {
-      this.close();
-    }
-  }
-
-  keydownHandler(event) {
-    if (event.key === 'Escape') {
-      this.close();
-    }
   }
 }

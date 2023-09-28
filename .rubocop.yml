@@ -11,6 +11,8 @@ Bundler/OrderedGems:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Rails/ActionOrder:
+  Enabled: false
 
 # Layout/TrailingEmptyLines:
 #   Enabled: false

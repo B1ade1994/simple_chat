@@ -18,6 +18,7 @@ gem 'bootsnap', require: false
 
 gem 'pagy', '~> 6.0'
 gem 'slim-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rubocop', require: false
@@ -26,12 +27,9 @@ group :development, :test do
   gem 'rubocop-slim', require: false
 
   gem 'rspec-rails', '~> 6.0.0'
-end
-
-group :development do
-
+  gem 'factory_bot_rails'
 end
 
 group :test do
-  
+  gem 'shoulda-matchers', '~> 5.0'
 end
