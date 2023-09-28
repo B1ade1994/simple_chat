@@ -23,6 +23,9 @@
                 | Title
           tbody
             - @rooms.each do |room|
-              tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700.hover:bg-gray-50.dark:hover:bg-gray-600
+              tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700.hover:bg-gray-50.dark:hover:bg-gray-600 [
+                data-controller="link"
+                data-link=room_path(room)
+              ]
                 td.px-6.py-4.font-medium.text-gray-900.whitespace-nowrap.dark:text-white = room.id
                 td.px-6.py-4 = room.title
