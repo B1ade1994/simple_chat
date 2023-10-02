@@ -9,17 +9,24 @@ RSpec.describe 'Rooms' do
 
     it 'list of all users' do
       room = create(:room)
+
       get rooms_path
       expect(response.body).to include(room.title)
     end
   end
 
   describe 'GET /rooms/:id' do
-    let(:room) { create(:room) }
+    let!(:room) { create(:room) }
+    let!(:message) { create(:message, room:) }
 
     it 'success' do
       get room_path(room)
       expect(response).to be_successful
+    end
+
+    it 'shows messages' do
+      get room_path(room)
+      expect(response.body).to include(message.body)
     end
   end
 

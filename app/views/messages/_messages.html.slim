@@ -1,0 +1,11 @@
+.flex.flex-row.justify-between.bg-white
+  .w-full.px-5.flex.flex-col.justify-between
+    .flex.flex-col.mt-5
+      - @messages.each do |message|
+        = render 'messages/message', message:
+    .py-5
+      = simple_form_for [@room, @message], data: { controller: 'messages' } do |f|
+        = f.input :body, as: :string,
+                  label: false,
+                  input_html: { class: 'w-full bg-gray-300 py-5 px-3 rounded-xl', data: { target: 'messages.input' } },
+                  placeholder: 'type your message here...'

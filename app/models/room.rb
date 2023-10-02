@@ -1,4 +1,6 @@
 class Room < ApplicationRecord
+  has_many :messages, dependent: :destroy
+
   validates :title, presence: true, uniqueness: true
 
   after_create_commit { broadcast_message }
@@ -8,7 +10,7 @@ class Room < ApplicationRecord
   def broadcast_message
     ActionCable.server.broadcast(
       'rooms',
-      RoomsController.render(partial: 'table_row', locals: { room: self })
+      RoomsController.render(partial: 'room', locals: { room: self })
     )
   end
 end
