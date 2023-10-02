@@ -21,11 +21,6 @@
                 | ID
               th.px-12.py-3.5.text-sm.font-normal.text-left.rtl:text-right.text-gray-500.dark:text-gray-400
                 | Title
-          tbody
+          tbody data-controller="rooms-channel"
             - @rooms.each do |room|
-              tr.bg-white.border-b.dark:bg-gray-800.dark:border-gray-700.hover:bg-gray-50.dark:hover:bg-gray-600 [
-                data-controller="link"
-                data-link=room_path(room)
-              ]
-                td.px-6.py-4.font-medium.text-gray-900.whitespace-nowrap.dark:text-white = room.id
-                td.px-6.py-4 = room.title
+              = render 'table_row', room: room

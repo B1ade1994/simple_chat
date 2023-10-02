@@ -13,6 +13,8 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Rails/ActionOrder:
   Enabled: false
+RSpec/ContextWording:
+  Enabled: false
 
 # Layout/TrailingEmptyLines:
 #   Enabled: false
