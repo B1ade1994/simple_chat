@@ -1,6 +1,6 @@
 .flex.flex-row.justify-between.bg-white
   .w-full.px-5.flex.flex-col.justify-between
-    .flex.flex-col.mt-5
+    .flex.flex-col.mt-5 data-controller="messages-channel" data-room-id=@room.id
       - @messages.each do |message|
         = render 'messages/message', message:
     .py-5
