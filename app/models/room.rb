@@ -5,6 +5,10 @@ class Room < ApplicationRecord
 
   after_create_commit { broadcast_message }
 
+  def self.ransackable_attributes(_auth_object = nil)
+    column_names
+  end
+
   private
 
   def broadcast_message

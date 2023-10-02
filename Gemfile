@@ -19,6 +19,7 @@ gem 'bootsnap', require: false
 gem 'pagy', '~> 6.0'
 gem 'slim-rails'
 gem 'simple_form'
+gem 'ransack'
 
 group :development, :test do
   gem 'rubocop', require: false

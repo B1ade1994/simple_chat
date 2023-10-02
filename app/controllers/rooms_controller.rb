@@ -2,7 +2,8 @@ class RoomsController < ApplicationController
   def index
     @room = Room.new
 
-    scope = Room.all
+    @q = Room.ransack(params[:q])
+    scope = @q.result
     _pagy, @rooms = pagy(scope)
   end
 
